@@ -38,7 +38,7 @@ public Map<String, Integer> getScores() {
         if (entry.getValue() == -1) {
             sb.append("empty");
         } else {
-            sb.append(entry.getValue());  // Show the actual score
+            sb.append(entry.getValue());
         }
         sb.append("\n");
     }
