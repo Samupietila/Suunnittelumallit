@@ -7,7 +7,7 @@ import java.util.Set;
 
 public class AccessControlService {
     private static AccessControlService instance;
-    private Map<String, Set<String>> accessMap;
+    private Map<String, Set<Object>> accessMap;
 
     // Private constructor to prevent instantiation
     private AccessControlService() {
@@ -22,11 +22,11 @@ public class AccessControlService {
         return instance;
     }
 
-    public boolean isAllowed(String id, String user) {
+    public boolean isAllowed(String id, User user) {
         return accessMap.containsKey(id) && accessMap.get(id).contains(user);
     }
 
-    public void addAccess(String id, String user) {
+    public void addAccess(String id, User user) {
         accessMap.computeIfAbsent(id, k -> new HashSet<>()).add(user);
     }
 }

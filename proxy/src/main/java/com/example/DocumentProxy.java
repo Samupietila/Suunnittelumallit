@@ -14,7 +14,7 @@ public class DocumentProxy implements IDocument {
     @Override
     public String getContent(User user) {
         if (document.isProtected()) {
-            if (accessControlService.isAllowed(document.getId(), user.getName())) {
+            if (accessControlService.isAllowed(document.getId(), user)) {
                 return document.getContent(user);
             } else {
                 throw new AccessDeniedException("Access denied");

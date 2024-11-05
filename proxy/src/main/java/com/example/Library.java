@@ -12,15 +12,21 @@ public class Library {
 
     public void addDocument(Document document){
         if (document.isProtected()) {
-            DocumentProxy proxy = new DocumentProxy(document, null);
+            DocumentProxy proxy = new DocumentProxy(document, AccessControlService.getInstance());
             documents.put(document.getId(), proxy);
         } else {
             documents.put(document.getId(), document);
         }
     }
 
-    public IDocument getDocument(String id, String user) {
-        return documents.get(id);}
+    public String getDocument(String id, User user){
+        IDocument document = documents.get(id);
+        if (document != null) {
+            return document.getContent(user);
+        } else {
+            throw new IllegalArgumentException("Document not found");
+        }
+    }
         
 }
 
