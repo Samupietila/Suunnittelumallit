@@ -29,7 +29,6 @@ public class CalendarToNewDateAdapter implements NewDateInterface {
 
     @Override
     public int getMonth() {
-        // Adjust for zero-based month index in Calendar
         return calendar.get(Calendar.MONTH) + 1;
     }
 
