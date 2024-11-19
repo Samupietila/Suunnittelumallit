@@ -15,4 +15,7 @@ abstract class Maps {
             }
         }
     };
+    public Image[][] getTiles() {
+        return tiles;
+    }
 }

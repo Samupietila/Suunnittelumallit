@@ -26,6 +26,8 @@ public class TileGraphicFactory {
                 case "Water":
                 image = new WaterTile().getImage();
                 break;
+                default:
+                    return null;
             }
             images.put(type, image);
         }
