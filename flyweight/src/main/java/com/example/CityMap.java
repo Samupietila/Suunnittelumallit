@@ -1,23 +1,24 @@
-package factory_method;
+package com.example;
 
 import java.util.Random;
 
-public class WildernessMap extends Map {
-        @Override
+
+public class CityMap extends Maps {
+    @Override
     public String createTile() {
         Random random = new Random();
         Integer numbInteger = random.nextInt(3) + 1;
         Tile tile = null;
         switch (numbInteger) {
             case 1:
-                tile = new WaterTile();
+                tile = new BuildingTile();
                 break;
             case 2:
-                tile = new ForestTile();
+                tile = new RoadTile();
                 break;        
             case 3:
-                tile = new SwampTile();
+                tile = new ForestTile();
                 break;
         }
-        return tile.getCharacter();
+        return tile.getType();
     }}
