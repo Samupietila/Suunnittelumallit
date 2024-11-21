@@ -1,5 +1,3 @@
-Here is a template for your README.md file:
-
 # Suunnittelumallit
 
 Tasks from the course.
